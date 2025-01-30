@@ -1,0 +1,12 @@
+trigger:
+- main 
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: AzureWebAppContainer@1
+  inputs:
+    azureSubscription: 'chirag-service connection' 
+    appName: 'chiragwebapp' 
+    containers: 'chiragregistry.azurecr.io/hello-world:latest'
